@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="0e14c109-5887-44d1-81c8-2c9f3c327c2b" name="Default" comment="" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="settings.editor.selected.configurable" value="PyConsoleConfigurable.Python Console" />
+  </component>
+  <component name="PyConsoleOptionsProvider">
+    <option name="myPythonConsoleState">
+      <console-settings is-module-sdk="true">
+        <envs>
+          <env key="" value="" />
+          <env key="             SPOTIPY_CLIENT_SECRET" value="18e103269ae1418fadefd320397676d5" />
+          <env key="SPOTIFY_CLIENT_ID" value="e8628a1187e8467bbe60c0770e93e943" />
+          <env key="SPOTIFY_REDIRECT_URL" value=" http://localhost:8888/callback" />
+        </envs>
+        <option name="myUseModuleSdk" value="true" />
+        <option name="myEnvs">
+          <map>
+            <entry key="" value="" />
+            <entry key="             SPOTIPY_CLIENT_SECRET" value="18e103269ae1418fadefd320397676d5" />
+            <entry key="SPOTIFY_CLIENT_ID" value="e8628a1187e8467bbe60c0770e93e943" />
+            <entry key="SPOTIFY_REDIRECT_URL" value=" http://localhost:8888/callback" />
+          </map>
+        </option>
+      </console-settings>
+    </option>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <created>1522915974995</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1522915974995</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager />
+    <watches-manager />
+  </component>
+</project>

@@ -1,0 +1,31 @@
+***********************************************************************
+*********** BASES DE DATOS NO CONVENCIONALES - PARTE 2 ****************
+***********************************************************************
+
+** Autores: Javier LLorente Mañas y Carlos Sánchez Vega
+
+** Objetivo: esta primera parte consta de un fichero python:
+
+	- parseJSONToCSV.py: tiene como objetivo parsear un xml de entrada, generando un fichero csv con el formato correcto.
+
+** Requisitos: 
+
+	- tener instalada la ibrería lxml de python.
+	- tener el fichero dblp en el mismo directorio que el fichero xml de entrada (dblp.xml).
+	- poner el fichero xml de entrada en la ruta correspondiente (mirar el apartado siguiente)
+
+** Ruta de los ficheros de entrada y salida:
+    -	xml_input_path = "./FicherosBBDD/XML/dblp.xml"
+    - 	xml_output_path_publications = "./FicherosBBDD/JSON/publications.json"
+    -	xml_output_path_authors = "./FicherosBBDD/JSON/authors.json"
+
+
+
+	(Por tanto, si se quiere ejecutar el proyecto tal y como lo ejecutamos en local en local, habría que crear el árbol de directorios):
+		FicherosBBDD
+			|
+			|-- XML---> dblp.xml y dblp.dtd
+			|
+			|-- JSON 
+
+** NOTA: tal y como se ha facilitado el proyecto, se podría ejecutar sin necesidad de crear el árbol de directorios

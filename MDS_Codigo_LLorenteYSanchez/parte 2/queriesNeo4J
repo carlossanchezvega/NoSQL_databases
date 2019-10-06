@@ -1,0 +1,72 @@
+
+# habiendo colocado el fichero en la carpeta de import de la base de datos, que en nuestro caso está en :
+# /home/csanchez/.config/Neo4j Desktop/Application/neo4jDatabases/database-56926dad-5c14-4c4d-be69-e52762e8e6e8/installation-3.3.4/import/
+
+# borramos toda la base de datos y sus relaciones previas
+MATCH (n)
+WITH n LIMIT 10000
+OPTIONAL MATCH (n)-[r]->()
+DELETE n,r;
+
+
+
+# 
+CREATE CONSTRAINT ON (author:Author) ASSERT author.author IS UNIQUE;
+CREATE CONSTRAINT ON (type:Type) ASSERT type.type IS UNIQUE;
+CREATE CONSTRAINT ON (publication:publication) ASSERT publication.id IS UNIQUE;
+
+
+USING PERIODIC COMMIT 500
+
+LOAD CSV WITH HEADERS FROM "file:///dblp.csv" AS dblp
+MERGE (publication:Publication { id: dblp.title, pages: dblp.pages, url:dblp.url })
+MERGE (year:Year {year: toInteger(dblp.year)})
+MERGE (author:Author {author: dblp.author})
+MERGE (type:TYPE {type: dblp.type})
+MERGE (publication)-[:WRITTEN_BY]->(author)
+MERGE (publication)-[:WRITTEN_IN]->(year)
+MERGE (publication)-[:OF_TYPE]->(type)
+
+
+
+#######################################################################
+
+QUERIES
+
+#######################################################################
+
+# QUERY 1
+___________
+# autores de la publicación con título "Investigation of Curtain Mura in TFT-TN panels after COG ACF process."
+MATCH (publication)-[WRITTEN_BY]->(author)
+WHERE publication.id = "Investigation of Curtain Mura in TFT-TN panels after COG ACF process."
+RETURN author, publication
+
+
+# QUERY 2
+____________
+# publicaciones escritas en 1996
+MATCH (publication)-[WRITTEN_IN]->(year)
+WHERE year.year = 1996
+RETURN publication, year
+
+
+
+# QUERY 3
+___________
+# publicaciones de tipo "article" 
+MATCH (publication)-[OF_TYPE]->(type)
+WHERE type.type = "article"
+RETURN publication, type
+
+
+
+
+
+
+
+
+
+
+
+
